@@ -20,7 +20,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-             cd Lambda
       - name: Zip Lambda code
         run: |
           cd lambda
