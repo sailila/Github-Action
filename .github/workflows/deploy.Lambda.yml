@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Zip Lambda code
-        zip -r Lambda.zip lambda/index.js,
+        Run:  zip -r Lambda.zip lambda/index.js,
 
           
       - name: Configure AWS credentials
