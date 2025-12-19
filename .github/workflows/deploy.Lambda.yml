@@ -19,9 +19,13 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
+        working-directory: lambda
         run: npm install
-      - name: Zip Lambda 
-        Run:  zip -r Lambda.zip lambda/index.js,
+
+      - name: Zip Lambda
+        run: |
+          cd lambda
+          zip -r ../Lambda.zip .
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -35,4 +39,3 @@ jobs:
           aws lambda update-function-code \
             --function-name ${{ secrets.LAMBDA_FUNCTION_NAME }} \
             --zip-file fileb://Lambda.zip
-
