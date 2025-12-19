@@ -24,7 +24,7 @@ jobs:
       - name: Zip Lambda code
         run: |
           cd lambda
-          zip -r ../lambda.zip .
+          zip -r ../Lambda.zip .
           cd ..
 
       - name: Configure AWS credentials
@@ -38,5 +38,5 @@ jobs:
         run: |
           aws lambda update-function-code \
             --function-name ${{ secrets.LAMBDA_FUNCTION_NAME }} \
-            --zip-file fileb://lambda.zip
+            --zip-file fileb://Lambda.zip
 
