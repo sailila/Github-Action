@@ -22,10 +22,8 @@ jobs:
         run: npm install
       - name: Zip Lambda code
         run: |
-          cd Lambda
-          zip -r ../Lambda.zip .
-          cd ..
-
+          zip -r Lambda.zip index.js
+          
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
