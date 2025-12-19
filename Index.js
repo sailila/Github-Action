@@ -6,7 +6,7 @@ const dynamo = DynamoDBDocumentClient.from(client);
 
 exports.handler = async () => {
   const params = {
-    TableName: process.env.Flightbooking_production,
+    TableName: process.env.Flightbooking_production1,
     Item: {
     bookingId: "17925573",
     flightId: "b364be91-0553-475a-a0a9-0402a796144d",
